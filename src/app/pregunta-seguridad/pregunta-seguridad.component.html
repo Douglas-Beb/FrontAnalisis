@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pregunta Seguridad</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="title">Preguntas de Seguridad</div>
+    <form method="post">
+      <div class="group-details">
+        <div class="input-box">
+          <span class="details">Usuario</span>
+          <select [(ngModel)]="nuevoUsuario.idusuario" name="idusuario" required>
+            <option *ngFor="let usuario of usuario" [value]="usuario.idusuario">{{usuario.nombre}}</option>
+          </select>
+        </div><br>
+        <div class="form-group">
+          <label for="pregunta" class="details">Pregunta</label>
+          <input [(ngModel)]="nuevoUsuario.pregunta" type="text" placeholder="Ingresa tu pregunta" id="pregunta" name="pregunta">
+        </div>
+        <div class="form-group respuesta-group">
+          <label for="respuesta" class="details">Respuesta</label>
+          <input [(ngModel)]="nuevoUsuario.respuesta" type="text" placeholder="Ingresa tu respuesta" id="respuesta" name="respuesta" required>
+        </div>
+      </div>
+      <div class="button">
+        <input type="submit" value="Guardar" (click)="guardarUsuario()">
+      </div>
+      <nav>
+        <a href="/menu"><b>Regresar</b></a>
+      </nav>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="title">Registrar nuevo movimiento</div>
+    <form id="formulario">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">Persona</span>
+          <select [(ngModel)]="movimientoCuenta.idsaldocuenta" name="idsaldocuenta" required>
+            <option *ngFor="let persona of persona" [value]="persona.idsaldocuenta">{{persona.idsaldocuenta}}</option>
+          </select>
+        </div>
+        
+        <div class="input-box">
+          <span class="details">Tipo Movimiento</span>
+          <select [(ngModel)]="movimientoCuenta.idtipomovimientocxc" name="idtipomovimientocxc" required>
+            <option *ngFor="let tipomov of tipomov" [value]="tipomov.idtipomovimientocxc">{{tipomov.nombre}}</option>
+          </select>
+        </div>
+        <div class="input-box">
+          <span class="details">Valor movimiento</span>
+          <input type="text" placeholder="Valor movimiento" [(ngModel)]="movimientoCuenta.valormovimiento" name="valormovimiento" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Valor movimiento pagado</span>
+          <input type="text" placeholder="Valor movimiento pagado" [(ngModel)]="movimientoCuenta.valormovimientopagado" name="valormovimientopagado" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Descripción</span>
+          <input type="text" placeholder="Descripcion" [(ngModel)]="movimientoCuenta.descripcion" name="descripcion" required>
+        </div>
+      </div>
+      <div class="button">
+        <button type="button" (click) = "agregar()">Registrar movimiento</button>
+      </div>
+      <nav>
+        <a href="/tablasaldocuenta"><b>Regresar</b></a>
+      </nav>
+    </form>
+  </div>
+
+</body>
+</html>
